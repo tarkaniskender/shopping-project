@@ -6,12 +6,17 @@ import Products from '../components/home/Products';
 import Navbar from '../components/navbar/Navbar';
 import Cart from '../components/home/Cart';
 
+
 const Home = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  const clearCart = () => {
+    setCart([]); 
+  };
 
   return (
     <div>
-      <Navbar />
+      <Navbar cart={cart} />
       <SliderComp />
       <Sorting />
       <div className="flex">
@@ -19,12 +24,14 @@ const Home = () => {
           <Cattegory />
         </div>
         <div className="w-4/6">
-          <Products cart={cartItems} setCart={setCartItems} />
+          <Products cart={cart} setCart={setCart} />
         </div>
         <div className="w-1/6">
-          <Cart cart={cartItems} />
+          <Cart cart={cart} clearCart={clearCart} />
         </div>
       </div>
+
+      
     </div>
   );
 };

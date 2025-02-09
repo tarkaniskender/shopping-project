@@ -1,8 +1,10 @@
-const Cart = ({ cart }) => {
+const Cart = ({ cart, clearCart }) => {
 
     if (!cart || cart.length === 0) {
-      return <div className="border w-72 p-4 mt-2 rounded-lg shadow-lg">You don't have any orders for now.</div>;
+      return null;
     }
+
+    
   
     return (
       <div className="border w-72 p-4 mt-2 rounded-lg shadow-lg">
@@ -17,7 +19,7 @@ const Cart = ({ cart }) => {
         </ul>
         <hr className="my-4" />
         <p className="font-semibold text-xl">Total: {cart.reduce((sum, item) => sum + item.price, 0)} €</p>
-        <button className="bg-red-500 text-white py-2 rounded hover:bg-red-800 w-2/3 mt-4 text-center">
+        <button className="bg-red-500 text-white py-2 rounded hover:bg-red-800 w-2/3 mt-4 text-center" onClick={clearCart}>
           Clear Orders
         </button>
         <button className="bg-red-500 text-white py-2 rounded hover:bg-red-800 w-2/3 mt-4 text-center">

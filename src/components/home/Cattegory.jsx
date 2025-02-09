@@ -7,8 +7,7 @@ const Cattegory = () => {
     const dispatch =useDispatch();
     const {categories} = useSelector(state => state.categories)
 
-    console.log(categories, "categories");
-
+    
     useEffect(() => {
         dispatch(getCategories())
     }, [dispatch])
