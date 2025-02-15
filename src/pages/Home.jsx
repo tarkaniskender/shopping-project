@@ -5,6 +5,7 @@ import Cattegory from '../components/home/Cattegory';
 import Products from '../components/home/Products';
 import Navbar from '../components/navbar/Navbar';
 import Cart from '../components/home/Cart';
+import Footer from '../components/footer/Footer';
 
 
 const Home = () => {
@@ -29,9 +30,14 @@ const Home = () => {
         <div className="w-1/6">
           <Cart cart={cart} clearCart={clearCart} />
         </div>
-      </div>
 
       
+    </div>
+    <div>
+    </div>
+        <div className='display:block'>
+          <Footer/>
+        </div>
     </div>
   );
 };
